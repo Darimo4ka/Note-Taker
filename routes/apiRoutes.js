@@ -1,20 +1,19 @@
-// //  create connection to this folder
-const path = require('path');
-
-// req esxpress router
 const router = require('express').Router();
+
 const fs = require('fs');
-const util = require('util');
+const Helper = require('../db/helper');
+
+// requesting  notes
 
 router.get('/notes', (req, res) => {
-    // Send data from db
-    readFromFile(path.join(__dirname, "db/db.json"))
-        .then((data) => res.json(JSON.parse(data)));
-});
-// Route that sends the user the db.json file
-// router.get("/api/notes", function (req, res) {
-//     res.sendFile(path.join(__dirname, "db/db.json"));
-// });
-//   export 
+    Helper
+        .getNotes()
+        .then((notes) => {
+            return res.json(notes);
+        })
+        .catch((err) => res.status(500).json(err));
+ // posting note function route 
+// delete function 
+    })
 module.exports = router;
 

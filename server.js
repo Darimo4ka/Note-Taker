@@ -1,9 +1,10 @@
 const express = require('express');
 
-const app = express();
 // create var to ref out routes.
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
+
+const app = express();
 
 const PORT = process.env.PORT || 3001;
 
