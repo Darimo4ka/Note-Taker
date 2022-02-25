@@ -4,13 +4,13 @@ const uuid = require("uuid").v1;
 
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
-// class needs to be in cap letter
+// class needs to be in cap letter... and readFileAsync,writeFileAsync
 class Helper {
     read() {
-        return readFileAsync("/db.json", "utf8")
+        return readFileAsync("./db/db.json", "utf8")
     }
     write(note) {
-        return writeFileAsync("/db.json", JSON.stringify(note))
+        return writeFileAsync("./db/db.json", JSON.stringify(note))
     }
 
     addNote(note) {
