@@ -26,6 +26,7 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
+console.log('test two');
   fetch('/api/notes', {
     method: 'GET',
     headers: {
@@ -118,6 +119,7 @@ const handleRenderSaveBtn = () => {
 
 // Render the list of note titles
 const renderNoteList = async (notes) => {
+  console.log(notes);
   let jsonNotes = await notes.json();
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
@@ -179,5 +181,5 @@ if (window.location.pathname === '/notes') {
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
-
+console.log('test one');
 getAndRenderNotes();
