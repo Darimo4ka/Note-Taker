@@ -8,7 +8,7 @@ const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
 const app = express();
-
+//  this is important for deployment on HEROKU
 const PORT = process.env.PORT || 3001;
 //  first declare app.use(express.json()) to set the base of server:
 app.use(express.json());
